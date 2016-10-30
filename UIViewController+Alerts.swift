@@ -16,14 +16,14 @@ extension UIViewController {
 		self.present(alert, animated: true, completion: nil)
 	}
 
-	func show(_ style: UIAlertControllerStyle, title: String?, message: String?, titleAndStyles: [(String, UIAlertActionStyle)] = [], cb: ((_ action: UIAlertAction, _ index: Int)->Void)? = nil) {
+	func show(_ style: UIAlertControllerStyle, title: String?, message: String?, titleAndStyles: [(String, UIAlertActionStyle)], cb: ((_ action: UIAlertAction, _ index: Int)->Void)? = nil) {
 		let actions = titleAndStyles.enumerated().map { (index: Int, element: (String, UIAlertActionStyle)) -> UIAlertAction in
 			return UIAlertAction(title: element.0, style: element.1, handler: { cb?($0, index) })
 		}
 		show(style, title: title, message: message, actions: actions)
 	}
 
-	func show(_ style: UIAlertControllerStyle, title: String?, message: String?, cancelTitle: String, otherTitles: [String] = [], cb: ((_ action: UIAlertAction, _ index: Int)->Void)? = nil) {
+	func show(_ style: UIAlertControllerStyle, title: String?, message: String?, cancelTitle: String = "OK", otherTitles: [String] = [], cb: ((_ action: UIAlertAction, _ index: Int)->Void)? = nil) {
 		var actions = [UIAlertAction]()
 		actions.append(UIAlertAction(title: cancelTitle, style: .cancel, handler: { cb?($0, 0) }))
 		actions += otherTitles.enumerated().map{ (index, title) -> UIAlertAction in
