@@ -1,4 +1,4 @@
-# UIViewController-Alerts
+# UIViewController+Alerts
 
 A small extension to `UIViewController` to simplify creating alerts and actionsheets, Swift 3 style.
 
