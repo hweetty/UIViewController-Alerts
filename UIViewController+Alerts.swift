@@ -4,6 +4,9 @@
 //
 //  Created by Jerry Yu on 2016-09-21.
 //  Copyright © 2016 Jerry Yu. All rights reserved.
+//  
+//  Version: 2016-10-30a (v0)
+//  https://github.com/hweetty/UIViewController-Alerts/
 //
 
 import UIKit

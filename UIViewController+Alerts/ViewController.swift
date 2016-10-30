@@ -27,7 +27,7 @@ class ViewController: UIViewController {
 			case 2:
 				print("Thunderbolt")
 			default:
-				print("Wireless")
+				print("Cancelled")
 			}
 		}
 	}
