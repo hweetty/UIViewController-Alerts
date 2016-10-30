@@ -10,16 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		simpleAlert()
 	}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+	func simpleAlert() {
+		self.show(.alert, title: "The Sky is Blue", message: nil)
 	}
 
+	func twoActions() {
+		let tyles: [(String, UIAlertActionStyle)] = [
+			("Blue Pill", .default),
+			("Red Pill", .destructive),
+		]
+		self.show(.actionSheet, title: "Chose One", message: nil, titleAndStyles: tyles) { (action, index) in
+			// The index corresponds to the order of the given actions above
+			print(["Blue", "Red"][index])
+			self.twoActions()
+		}
+	}
 
 }
 
